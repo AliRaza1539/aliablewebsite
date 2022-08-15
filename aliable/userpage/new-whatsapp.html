@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>backToTop</title>
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    
+    
+    <style>
+
+.top-button{
+    background-color: #10c98f !important;
+    
+}
+.top-button:hover{
+
+    padding: 12px !important;
+    border: 0px !important;
+    outline: 0px !important;
+   
+}
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+     border-radius: 500px !important;
+
+ }
+ .test-div{
+    height: 100vh;
+    
+}
+
+
+    /* div-styling */
+    
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+<!-- Back to top button -->
+<button type="button" class="btn  p-2 btn-floating btn-lg shadow-lg top-button  " id="btn-back-to-top">
+  <img src="../images/up-arrow-white.png" class="" alt="">
+</button>
+
+
+<!-- Explanation -->
+
+<div class="test-div bg-info"></div>
+
+<div class="test-div bg-warning"></div>
+<div class="test-div bg-danger"></div>
+
+
+
+
+</body>
+
+<script type="text/javascript">
+   //Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+</script>
+
+
+</html>
